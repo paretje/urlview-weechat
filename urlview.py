@@ -33,7 +33,7 @@ def urlview(data, buf, args):
         return weechat.WEECHAT_RC_OK
 
     text = "\n".join(reversed(lines))
-    response = os.system("echo %s | urlview" % pipes.quote(text))
+    response = os.system("echo %s | urlscan" % pipes.quote(text))
     if response != 0:
         weechat.prnt(buf, "No URLs found")
 
